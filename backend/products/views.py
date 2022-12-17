@@ -1,23 +1,25 @@
+#from rest_framework
 from rest_framework import serializers
 from rest_framework import status, generics, mixins, permissions, authentication
-
-from django.http import Http404
-from . models import Product
-from . serializers import ProductSerializer
-
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-#from django.http import Http404
+#from django
+from django.http import Http404
 from django.shortcuts import get_object_or_404
+
+#from project
+from . models import Product
+from . serializers import ProductSerializer
+
 
 #ClassBasedView 👇👇👇
 #for Listing
 class ProductListAPIView(generics.ListAPIView):
     """
-Not gonna use this method!!! 
-    Since i can transform the CreateAPIView to ListCreateAPIView
+    Name: ProductListAPIView
+    Description: Since i can transform the CreateAPIView to ListCreateAPIView
     then in the test file  i can used the requests.get() for ListAPIView (in the list.py file)&
      request.post() for CreateAPIView (in the create.py file)
    """
