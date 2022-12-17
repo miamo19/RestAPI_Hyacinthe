@@ -1,8 +1,9 @@
+#from django
 from django.http import JsonResponse, HttpResponse
 import json
 from . models import Product
 
-
+#This views are using django modules to build an API
 """
 def api_test(request, *args, **kwargs):
     #print(request.body)
