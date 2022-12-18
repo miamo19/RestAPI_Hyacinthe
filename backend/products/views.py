@@ -29,6 +29,10 @@ product_list_view = ProductListAPIView.as_view()
 
 
 class ProductDetailAPIView(generics.RetrieveAPIView):
+    """
+    name: ProductDetailAPIView
+    description: This API help to retrieve a particular product
+    """
     queryset         = Product.objects.all()
     serializer_class = ProductSerializer
     permission_classes  = [permissions.IsAuthenticated]
@@ -60,6 +64,10 @@ product_list_create_view  = ProductListCreateAPIView.as_view()
 
 #To Update
 class ProductUpdateAPIView(generics.UpdateAPIView):
+    """
+    name: ProductUpdateAPIView
+    description: This API help in updating a particular product
+    """
     queryset         = Product.objects.all()
     serializer_class = ProductSerializer
     lookup_field = 'pk'
@@ -75,6 +83,10 @@ product_update_view = ProductUpdateAPIView.as_view()
 
 #To Delete-->Up
 class ProductDestroyAPIView(generics.DestroyAPIView):
+    """
+    name: ProductDestroyAPIView
+    description: This API help to delete a particular product
+    """
     queryset         = Product.objects.all()
     serializer_class = ProductSerializer
     lookup_field = 'pk'
