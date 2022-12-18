@@ -34,8 +34,12 @@ class ProductDetailAPIView(generics.RetrieveAPIView):
     permission_classes  = [permissions.IsAuthenticated]
     #lookup_field = 'pk' ??
     
-#To create or list    
+ 
 class ProductListCreateAPIView(generics.ListCreateAPIView):
+    """
+    name: ProductListCreateAPIView
+    descrption: This API help to list all products and to create a new product
+    """
     queryset                = Product.objects.all()
     serializer_class        = ProductSerializer
     authentication_classes  = [authentication.SessionAuthentication]
