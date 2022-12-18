@@ -15,7 +15,6 @@ from . serializers import ProductSerializer
 
 
 #ClassBasedView 👇👇👇
-#for Listing
 class ProductListAPIView(generics.ListAPIView):
     """
     Name: ProductListAPIView
