@@ -2,6 +2,10 @@ from django import forms
 from . models import Product
 
 class ProductForm(forms.ModelForm):
+    """
+    name: ProductForm
+    description: This class gives point of a form to be filled
+    """
     class Meta:
         model   = Product
         fields  = [
