@@ -62,7 +62,7 @@ class ProductListCreateAPIView(generics.ListCreateAPIView):
     
 product_list_create_view  = ProductListCreateAPIView.as_view()
 
-#To Update
+
 class ProductUpdateAPIView(generics.UpdateAPIView):
     """
     name: ProductUpdateAPIView
@@ -77,11 +77,10 @@ class ProductUpdateAPIView(generics.UpdateAPIView):
         instance = serializer.save()
         if not instance.content:
             instance.content = instance.title
-             
-            
+                      
 product_update_view = ProductUpdateAPIView.as_view()
 
-#To Delete-->Up
+
 class ProductDestroyAPIView(generics.DestroyAPIView):
     """
     name: ProductDestroyAPIView
@@ -111,6 +110,7 @@ class ProductMixinView(mixins.ListModelMixin,
     serializer_class  = ProductSerializer
     lookup_field      = 'pk'
     
+    #This method is the retrieve a specific product
     def get(self, request, *args, **kwargs):  #HTTP---> get  
         print(args, kwargs)
         pk = kwargs.get('pk')
@@ -118,6 +118,7 @@ class ProductMixinView(mixins.ListModelMixin,
             return self.retrieve(request, *args, **kwargs)
         return self.list(request, *args, **kwargs)
     
+    #This method is the create a product
     def post(self, request, *args, **kwargs): #HTTP--->post
              return self.create(request, *args, **kwargs)
     
