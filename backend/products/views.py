@@ -103,6 +103,10 @@ class ProductMixinView(mixins.ListModelMixin,
                        mixins.CreateModelMixin,
                        mixins.RetrieveModelMixin,
                        generics.GenericAPIView):
+    """
+    name: ProductMixinView
+    descrption: This API help to list all products, to create a new product and to retrieve a product
+    """
     queryset          = Product.objects.all()
     serializer_class  = ProductSerializer
     lookup_field      = 'pk'
