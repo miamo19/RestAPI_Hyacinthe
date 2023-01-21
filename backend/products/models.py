@@ -7,7 +7,7 @@ from django.db import models
 class Product(models.Model):
     """"
     name: Product
-    description: This class keep record about a particular Product
+    description: This class keep records about a particular Product.
     """
     title   = models.CharField(max_length=50)
     content = models.TextField(blank=True, null=True)
