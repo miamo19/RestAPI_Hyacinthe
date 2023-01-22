@@ -11,6 +11,10 @@ STYLE_CHOICES = sorted([(item, item) for item in get_all_styles()])
 
 
 class Snippet(models.Model):
+    """
+    name: Snippet
+    description: A snippet class
+    """
     created = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100, blank=True, null=False)
     code = models.TextField()
