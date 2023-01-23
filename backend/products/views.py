@@ -20,7 +20,7 @@ class ProductListAPIView(generics.ListAPIView):
     Name: ProductListAPIView
     Description: Since i can transform the CreateAPIView to ListCreateAPIView
     then in the test file  i can used the requests.get() for ListAPIView (in the list.py file)&
-     request.post() for CreateAPIView (in the create.py file)
+    request.post() for CreateAPIView (in the create.py file)
    """
     queryset          = Product.objects.all()
     serializer_class  = ProductSerializer
@@ -135,9 +135,9 @@ def product_alt_view(request, pk=None, *args, **kwargs):
         if pk is not None:
             #url_args
             #get request--> detail view
-            obj  = get_object_or_404(Product, pk=pk)       # queryset = Product.objects.filter(pk=pk)
+            obj  = get_object_or_404(Product, pk=pk)       #Raise Http404 OR can be written as  queryset = Product.objects.filter(pk=pk)
             data = ProductSerializer(obj, many=False).data # if not queryset.exist():
-            return Response(data)                          #     raise Http404
+            return Response(data)                         
                                                            # return Response()
         #get request--> list view
         queryset = Product.objects.all()
