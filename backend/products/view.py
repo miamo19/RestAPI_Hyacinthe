@@ -1,6 +1,8 @@
 #from django
 from django.http import JsonResponse, HttpResponse
 import json
+
+#from project
 from . models import Product
 
 #This views are using django modules to build an API
